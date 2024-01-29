@@ -1,0 +1,67 @@
+<header class="header">
+  <section class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="contact">
+            <p><span class="phone"><a href="#">Phone: +237 656327905</a></span><span class="email"><a href="#">Email:
+                  nyembe.mirhyne@gmail.com</a></span></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4"  *ngIf="isLoggedIn == false">
+          <div class="join-us">
+            <p><a routerLink="/auth/register">CREATE ACCOUNT</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="header-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-12 col-xs-12">
+          <a href="#">
+            <div class="main-logo">
+              <img src="../../assets/img/main-logo.png" alt="">
+              <h2>MY TODO</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-7 col-sm-12 col-xs-12" *ngIf="isLoggedIn == true">
+          <div class="menu">
+            <ul class="nav navbar-nav">
+              <li ><a href="">HOME</a></li>
+              <li ><a routerLink="/pages/task">TASKS</a></li>
+              <a class="btn btn-primary" routerLink="/auth/login"
+                style="background-color: #e7071e; border:none;margin-left:10px;margin-top:10px">Disconnet</a>
+                
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-7 col-sm-12 col-xs-12" *ngIf="isLoggedIn == false">
+          <div class="menu">
+            <ul class="nav navbar-nav">
+              <li class=""><a href="">HOME</a></li>
+              <a class="btn btn-primary" routerLink="/auth/login"
+                style="background-color: #01d262; border:none;margin-left:10px;margin-top:10px">Login</a>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</header>
+<section class="carosal-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="client owl-carousel owl-theme">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

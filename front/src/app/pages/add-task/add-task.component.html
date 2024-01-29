@@ -1,0 +1,32 @@
+<h2 style="text-align: center;">ADD TASK</h2>
+
+<div class="row" style="padding-bottom: 20px;">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <form (ngSubmit)="onSubmit()">
+
+            <div class="form-group mb-3">
+                <label for="nom">Title :</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="formulaireModel.title"
+                     name="title" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="fortune">Description:</label>
+                <textarea class="form-control" [(ngModel)]="formulaireModel.description" name="description" id="description"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary"
+                style="background-color: #01d262; border:none;float: right;">Save</button>
+        </form>
+
+        <div class="flex-sb-m w-full  p-b-20">
+            <div>
+              <span><a routerLink="/pages/task">
+                  Return
+                </a></span>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>

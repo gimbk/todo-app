@@ -1,0 +1,59 @@
+<h2 style="text-align: center;">REGISTER</h2>
+<p style="text-align: center;">You must create an account before start create your todo.</p>
+
+<div class="row" style="padding-bottom: 20px;">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <form (ngSubmit)="onSubmit()">
+      <ng-container *ngIf="message && status==false;">
+     
+        <div class="alert alert-danger d-flex align-items-center">
+          <span class="material-icons mr-2" >error</span>
+          
+          {{ message}}
+         <span class="material-icons   ml-auto error" (click)="hideError()" >close</span>
+        </div>
+            
+         </ng-container>
+
+         <ng-container *ngIf="message && status==true;">
+  
+        <div class="alert alert-success d-flex align-items-center">
+          <span class="material-icons mr-2" >error</span>
+          
+          {{ message}}
+         <span class="material-icons   ml-auto error" (click)="hideError()" >close</span>
+        </div>
+            
+         </ng-container>
+
+        
+
+          <ng-container *ngIf="errorMessage">
+            {{errorMessage}}
+            </ng-container>
+
+      <div class="form-group mb-3">
+        <label for="nom">Username :</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="formulaireModel.username" placeholder="Your username" name="username" required>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="fortune">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="formulaireModel.password" name="password" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary"
+        style="background-color: #01d262; border:none;float: right;">Save</button>
+    </form>
+
+    <div class="flex-sb-m w-full  p-b-20">
+      <div>
+        <span>Already Registered? <a routerLink="/auth/login">
+            Login
+          </a></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
