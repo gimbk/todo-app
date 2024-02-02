@@ -7,11 +7,13 @@ const router = express.Router();
 
 router.get('/:id', verifyToken, taskController.getAllTasks);
 
+router.get('/all', verifyToken, taskController.getAllTasks);
+
 router.get('/one/:id', verifyToken, taskController.getOneTasks);
 
-router.post('/',verifyToken, taskController.postTask);
+router.post('/add',verifyToken, taskController.postTask);
 
-router.put('/',verifyToken, taskController.putTask);
+router.put('/update',verifyToken, taskController.putTask);
 
 router.delete('/:id',verifyToken, taskController.deleteTask);
 

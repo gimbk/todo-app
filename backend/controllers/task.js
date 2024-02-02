@@ -3,7 +3,19 @@ const Task = require('../models/task');
 
 exports.getAllTasks = async (req, res, next) => {
   try {
-    const [allTasks] = await Task.fetchAll(req.params.id);
+    const [allTasks] = await Task.fetchAll();
+    res.status(200).json(allTasks);
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+};
+
+exports.getAllUserTasks = async (req, res, next) => {
+  try {
+    const [allTasks] = await Task.fetchAllUser(req.params.id);
     res.status(200).json(allTasks);
   } catch (err) {
     if (!err.statusCode) {

@@ -11,7 +11,11 @@ module.exports = class Task {
     this.updated_at = updated_at;
   }
 
-  static fetchAll(id) {
+  static fetchAll() {
+    return db.execute('SELECT * FROM tasks');
+  }
+
+  static fetchAllUser(id) {
     return db.execute('SELECT * FROM tasks WHERE user_id = ?', [id]);
   }
 
